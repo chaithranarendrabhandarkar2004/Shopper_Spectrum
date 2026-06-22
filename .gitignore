@@ -1,0 +1,28 @@
+# Virtual Environment
+.venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# Models
+models/*.pkl
+
+# VS Code
+.vscode/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Outputs
+outputs/charts/*
+outputs/reports/*
