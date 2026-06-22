@@ -12,7 +12,6 @@ def train_clustering_model(rfm):
     silhouette_scores = []
     inertias = []
 
-    # Calculate metrics for Elbow Curve and Silhouette Curve
     for k in k_values:
         model = KMeans(
             n_clusters=k,
@@ -21,14 +20,11 @@ def train_clustering_model(rfm):
         )
         labels = model.fit_predict(rfm_scaled)
         
-        # Silhouette Score
         score = silhouette_score(rfm_scaled, labels)
         silhouette_scores.append(score)
         
-        # Inertia (for Elbow Curve)
         inertias.append(model.inertia_)
 
-    # Save clustering metrics for visualization in the app
     metrics = {
         "k_values": k_values,
         "silhouette_scores": silhouette_scores,
@@ -36,7 +32,6 @@ def train_clustering_model(rfm):
     }
     joblib.dump(metrics, "models/clustering_metrics.pkl")
 
-    # Train the final model with exactly 4 clusters matching the requested categories
     final_model = KMeans(
         n_clusters=4,
         random_state=42,
@@ -46,11 +41,9 @@ def train_clustering_model(rfm):
     clusters = final_model.fit_predict(rfm_scaled)
     rfm["Cluster"] = clusters
 
-    # Save models
     joblib.dump(final_model, "models/kmeans_model.pkl")
     joblib.dump(scaler, "models/scaler.pkl")
-    
-    # Save clustered RFM dataset for 3D scatter plot rendering in the app
+
     joblib.dump(rfm, "models/rfm_with_clusters.pkl")
 
     return rfm, final_model, scaler
