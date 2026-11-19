@@ -10,7 +10,7 @@ __pycache__/
 
 .streamlit/
 
-models/*.pkl
+models/item_similarity.pkl
 
 .vscode/
 
