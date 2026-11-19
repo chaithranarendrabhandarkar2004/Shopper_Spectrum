@@ -281,3 +281,16 @@ Artificial Intelligence and Machine Learning Engineering Student
 If you find this project interesting, consider giving this repository a ⭐ on GitHub!
 
 **Thank you for visiting Shopper Spectrum!** 🚀
+
+---
+
+## 📸 Project Screenshots
+
+### 🏠 Home Dashboard
+![Shopper Spectrum Home Dashboard](screenshots/home.png)
+
+### 📊 Customer Clustering
+![Customer Clustering Dashboard](screenshots/clustering.png)
+
+### 🛍️ Product Recommendations
+![Product Recommendation Dashboard](screenshots/recommendation.png)
